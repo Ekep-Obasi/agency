@@ -1,5 +1,6 @@
 import React from "react";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
+
 const LottiePlayer = ({VideoPath , className}:{VideoPath:any , className?:string}) => {
   return (
     <div>

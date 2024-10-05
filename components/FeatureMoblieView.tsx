@@ -9,6 +9,7 @@ import deDuplication from '@/public/images/CaptureAndReplayV2.json';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 const LottiePlayer = dynamic(()=>import("./LottiePlayer"),{ssr:false}) 
+
 export default function FeaturesMobileView() {
   const [tab, setTab] = useState<number>(1);
 

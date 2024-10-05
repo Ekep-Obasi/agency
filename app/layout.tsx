@@ -1,12 +1,13 @@
-import './css/style.css';
-import { Inter } from 'next/font/google';
-import Header from '@/components/ui/header';
-import React, { ReactNode } from 'react';
+import "./css/style.css";
+import { Inter } from "next/font/google";
+import Header from "@/components/ui/header";
+import React, { ReactNode } from "react";
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+  adjustFontFallback: false,
 });
 
 export interface Metadata {
@@ -17,12 +18,12 @@ export interface Metadata {
 }
 
 export const defaultMetadata: Metadata = {
-  title: 'Keploy | Open Source Stubs and API Test Generator for Developer',
+  title: "Keploy | Open Source Stubs and API Test Generator for Developer",
   keywords:
-    'Integration testing, e2e Testing, ai testing, Unit Testing, API Testing, open source ai testing tool, Service Mocking, Dependency Mocking',
+    "Integration testing, e2e Testing, ai testing, Unit Testing, API Testing, open source ai testing tool, Service Mocking, Dependency Mocking",
   description:
-    'Keploy is AI based test case and stubs/mocks generator for integration and unit testing. 90% test coverage in minutes with open source testing tool',
-  image: 'images/logo.svg',
+    "Keploy is AI based test case and stubs/mocks generator for integration and unit testing. 90% test coverage in minutes with open source testing tool",
+  image: "images/logo.svg",
 };
 
 interface RootLayoutProps {
@@ -43,7 +44,7 @@ export default function RootLayout({
     image: metadata?.image || defaultMetadata.image,
   };
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <title>{finalMetadata.title}</title>
         <meta name="keywords" content={finalMetadata.keywords} />

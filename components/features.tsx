@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import testAndStubsGen from "@/public/images/TestGenHighlighted.json";
 import deDuplication from "@/public/images/CaptureAndReplayV2.json";
 import Link from "next/link";
@@ -21,7 +21,6 @@ const TestAndStubGenerationImage = () => {
       <div className=" mb-2 h-[50%]">
         <LottiePlayer VideoPath={testAndStubsGen} />
       </div>
-      
     </div>
   );
 };
@@ -36,14 +35,10 @@ const TestDuplicationImage = () => {
   );
 };
 
-
-
-  
-  // const heightFix = () => {
-  //   if (tabs.current && tabs.current.parentElement)
-  //     tabs.current.parentElement.style.height = `${tabs.current.clientHeight}px`;
-  // };
-  
+// const heightFix = () => {
+//   if (tabs.current && tabs.current.parentElement)
+//     tabs.current.parentElement.style.height = `${tabs.current.clientHeight}px`;
+// };
 
 const TextSection = ({
   svg,
@@ -84,62 +79,62 @@ const TextSection = ({
 export default function Features() {
   const container = useRef(null);
 
-useGSAP(
-  () => {
-    const details: any = gsap.utils.toArray(".detail");
+  useGSAP(
+    () => {
+      const details: any = gsap.utils.toArray(".detail");
 
-    const images: any = gsap.utils.toArray(".imageToShow");
+      const images: any = gsap.utils.toArray(".imageToShow");
 
-    gsap.set(images[1], { opacity: 0 });
-
-    ScrollTrigger.create({
-      trigger: ".content-container",
-      start: "top top",
-      end: "bottom bottom",
-      pin: ".right-content",
-    });
-
-    ScrollTrigger.create({
-      trigger: ".content-container",
-      start: "top top",
-      end: "bottom bottom",
-      pin: ".heading-text",
-    });
-
-    details.forEach((detail: any) => {
-      gsap.set(detail, { opacity: 1 }); 
+      gsap.set(images[1], { opacity: 0 });
 
       ScrollTrigger.create({
-        trigger: detail,
-        start: "top 20%", 
-        end: "center center",
-        onEnter: () => gsap.set(detail, { opacity: 0 }),
-        onLeaveBack: () => gsap.set(detail, { opacity: 1 }),
-        scrub: 1, 
+        trigger: ".content-container",
+        start: "top top",
+        end: "bottom bottom",
+        pin: ".right-content",
       });
-    });
 
-    gsap.to(images[0], {
-      scrollTrigger: {
-        trigger: details[1],
-        start: "center center",
-        end: "center center",
-        scrub: 1,
-      },
-      opacity: 0,
-    });
-    gsap.to(images[1], {
-      scrollTrigger: {
-        trigger: details[1],
-        start: "center center",
-        end: "center center",
-        scrub: 1,
-      },
-      opacity: 1,
-    });
-  },
-  { scope: container }
-);
+      ScrollTrigger.create({
+        trigger: ".content-container",
+        start: "top top",
+        end: "bottom bottom",
+        pin: ".heading-text",
+      });
+
+      details.forEach((detail: any) => {
+        gsap.set(detail, { opacity: 1 });
+
+        ScrollTrigger.create({
+          trigger: detail,
+          start: "top 20%",
+          end: "center center",
+          onEnter: () => gsap.set(detail, { opacity: 0 }),
+          onLeaveBack: () => gsap.set(detail, { opacity: 1 }),
+          scrub: 1,
+        });
+      });
+
+      gsap.to(images[0], {
+        scrollTrigger: {
+          trigger: details[1],
+          start: "center center",
+          end: "center center",
+          scrub: 1,
+        },
+        opacity: 0,
+      });
+      gsap.to(images[1], {
+        scrollTrigger: {
+          trigger: details[1],
+          start: "center center",
+          end: "center center",
+          scrub: 1,
+        },
+        opacity: 1,
+      });
+    },
+    { scope: container }
+  );
 
   return (
     <>
@@ -150,7 +145,8 @@ useGSAP(
             Keploy for Developers
           </h1>
           <p className="text-xl text-gray-600">
-            smart API testing, capture network calls and generate tests with stubs
+            smart API testing, capture network calls and generate tests with
+            stubs
           </p>
         </div>
         <div className="relative grid max-w-6xl grid-cols-2 gap-16 pt-[30vh] pb-[50vh]  mx-auto  content-container">

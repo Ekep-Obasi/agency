@@ -1,24 +1,24 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import Tweet from "./tweets";
 const tweets = [
   {
     avatar:
-        "https://pbs.twimg.com/profile_images/1653250498127089665/x5RJbLq5_400x400.jpg",
+      "https://pbs.twimg.com/profile_images/1653250498127089665/x5RJbLq5_400x400.jpg",
     name: "きょん/kyong",
     id: "kyongshiii06",
     post: "https://x.com/kyongshiii06/status/1753030333128495470?s=20",
     content:
-        "I tried keploy, it was amazing. Just wrap and start docker, and then just hit the API with curl or the client and you'll be able to test more and more. This is the golden test.",
+      "I tried keploy, it was amazing. Just wrap and start docker, and then just hit the API with curl or the client and you'll be able to test more and more. This is the golden test.",
   },
   {
     avatar:
-        "https://pbs.twimg.com/profile_images/1741543460115812352/8x4aAI9k_400x400.jpg",
+      "https://pbs.twimg.com/profile_images/1741543460115812352/8x4aAI9k_400x400.jpg",
     name: "Shivam Sourav Jha",
     id: "ShivamSouravJha",
     post: "https://x.com/ShivamSouravJha/status/1747517726749286713?s=20",
     content:
-        "Why do I like keploy so much? Literally I see many tools and so hard to integrate. I mean update VScode , use the sdk , make this change make that change. With Keploy, don't worry buddy just run your application, we will literally do everything for you. You need to 0 efforts.",
+      "Why do I like keploy so much? Literally I see many tools and so hard to integrate. I mean update VScode , use the sdk , make this change make that change. With Keploy, don't worry buddy just run your application, we will literally do everything for you. You need to 0 efforts.",
   },
   {
     avatar:
@@ -44,8 +44,7 @@ const tweets = [
     name: "あんどーぼんばー",
     id: "AndooBomber",
     post: "https://x.com/AndooBomber/status/1747663021747691808?s=20",
-    content:
-      "I tried Keploy, good tool.",
+    content: "I tried Keploy, good tool.",
   },
   {
     avatar:
@@ -67,12 +66,12 @@ const tweets = [
   },
   {
     avatar:
-        "https://pbs.twimg.com/profile_images/1653250498127089665/x5RJbLq5_400x400.jpg",
+      "https://pbs.twimg.com/profile_images/1653250498127089665/x5RJbLq5_400x400.jpg",
     name: "きょん/kyong",
     id: "kyongshiii06",
     post: "https://x.com/kyongshiii06/status/1746532217336250821?s=20",
     content:
-        "Keploy can record and replay complex, distributed API flows as mocks and stubs. It's like having a time machine for your tests—saving you tons of time.",
+      "Keploy can record and replay complex, distributed API flows as mocks and stubs. It's like having a time machine for your tests—saving you tons of time.",
   },
   {
     avatar:
@@ -112,93 +111,91 @@ const tweets = [
   },
 ];
 const TwitterTestimonials = () => {
-  const [isMobile,setIsMobile] = useState(false);
-  useEffect(()=>{
-    const handleSize=()=>{
-      setIsMobile(window.innerWidth>=1023);
-    }
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleSize = () => {
+      setIsMobile(window.innerWidth >= 1023);
+    };
     handleSize();
-    window.addEventListener("resize",handleSize);
-    return()=>{
-      window.removeEventListener("resize",handleSize)
-    }
-  },[]) 
+    window.addEventListener("resize", handleSize);
+    return () => {
+      window.removeEventListener("resize", handleSize);
+    };
+  }, []);
   return (
     <>
       <div className="relative mt-20 mb-20">
         <div className=" relative mt-2 mb-8 z-10 max-w-5xl mx-auto flex flex-col justify-center">
           <h3 className=" text-center h2 px-10 text-secondary-300">
-          We love when users talk about Keploy..
+            We love when users talk about Keploy..
           </h3>
           {isMobile ? (
-             <div className="flex flex-row max-lg:flex-col mt-10">
-             <div className="flex flex-col">
-               {tweets.slice(0, 4).map((tweet, index) => (
-                 <Tweet
-                   key={index}
-                   avatar={tweet.avatar}
-                   name={tweet.name}
-                   id={tweet.id}
-                   post={tweet.post}
-                   content={tweet.content}
-                 />
-               ))}
-             </div>
-             <div className="flex flex-col">
-               {tweets.slice(4, 8).map((tweet, index) => (
-                 <Tweet
-                   key={index}
-                   avatar={tweet.avatar}
-                   name={tweet.name}
-                   id={tweet.id}
-                   post={tweet.post}
-                   content={tweet.content}
-                 />
-               ))}
-             </div>
-             <div className="flex flex-col">
-               {tweets.slice(8, 12).map((tweet, index) => (
-                 <Tweet
-                   key={index}
-                   avatar={tweet.avatar}
-                   name={tweet.name}
-                   id={tweet.id}
-                   post={tweet.post}
-                   content={tweet.content}
-                 />
-               ))}
-             </div>
-           </div>
-          ):(
+            <div className="flex flex-row max-lg:flex-col mt-10">
+              <div className="flex flex-col">
+                {tweets.slice(0, 4).map((tweet, index) => (
+                  <Tweet
+                    key={index}
+                    avatar={tweet.avatar}
+                    name={tweet.name}
+                    id={tweet.id}
+                    post={tweet.post}
+                    content={tweet.content}
+                  />
+                ))}
+              </div>
+              <div className="flex flex-col">
+                {tweets.slice(4, 8).map((tweet, index) => (
+                  <Tweet
+                    key={index}
+                    avatar={tweet.avatar}
+                    name={tweet.name}
+                    id={tweet.id}
+                    post={tweet.post}
+                    content={tweet.content}
+                  />
+                ))}
+              </div>
+              <div className="flex flex-col">
+                {tweets.slice(8, 12).map((tweet, index) => (
+                  <Tweet
+                    key={index}
+                    avatar={tweet.avatar}
+                    name={tweet.name}
+                    id={tweet.id}
+                    post={tweet.post}
+                    content={tweet.content}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : (
             <div className="flex flex-row max-lg:flex-col mt-10 mx-10">
-             <div className="flex flex-col">
-               {tweets.slice(0, 4).map((tweet, index) => (
-                 <Tweet
-                   key={index}
-                   avatar={tweet.avatar}
-                   name={tweet.name}
-                   id={tweet.id}
-                   post={tweet.post}
-                   content={tweet.content}
-                 />
-               ))}
-             </div>
-             <div className="flex flex-col">
-               {tweets.slice(4, 6).map((tweet, index) => (
-                 <Tweet
-                   key={index}
-                   avatar={tweet.avatar}
-                   name={tweet.name}
-                   id={tweet.id}
-                   post={tweet.post}
-                   content={tweet.content}
-                 />
-               ))}
-             </div>
-   
-           </div>
+              <div className="flex flex-col">
+                {tweets.slice(0, 4).map((tweet, index) => (
+                  <Tweet
+                    key={index}
+                    avatar={tweet.avatar}
+                    name={tweet.name}
+                    id={tweet.id}
+                    post={tweet.post}
+                    content={tweet.content}
+                  />
+                ))}
+              </div>
+              <div className="flex flex-col">
+                {tweets.slice(4, 6).map((tweet, index) => (
+                  <Tweet
+                    key={index}
+                    avatar={tweet.avatar}
+                    name={tweet.name}
+                    id={tweet.id}
+                    post={tweet.post}
+                    content={tweet.content}
+                  />
+                ))}
+              </div>
+            </div>
           )}
-         
         </div>
       </div>
     </>

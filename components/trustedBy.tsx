@@ -36,7 +36,10 @@ export const TrustedBy = () => {
         {/* Marquee Component */}
         <Marquee className="py-4 md:py-12" repeat={3} pauseOnHover>
           {images.map(({ src, alt }) => (
-            <span key={alt} className="mx-4 flex-none flex items-center justify-center">
+            <span
+              key={alt}
+              className="mx-4 flex-none flex items-center justify-center"
+            >
               <Image
                 className="relative w-32 md:w-40 h-auto" // Ensure consistent height
                 src={src}

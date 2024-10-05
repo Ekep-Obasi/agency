@@ -3,10 +3,11 @@
 import { useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const formatStars = (num:number)=>Intl.NumberFormat('en-US', {
-  notation: "compact",
-  maximumFractionDigits: 1
-}).format(num);
+const formatStars = (num: number) =>
+  Intl.NumberFormat("en-US", {
+    notation: "compact",
+    maximumFractionDigits: 1,
+  }).format(num);
 
 export default function CountingNumbers({
   className,
@@ -21,11 +22,9 @@ export default function CountingNumbers({
   interval?: number;
   duration?: number;
 }) {
-
   const [top, setTop] = useState<boolean>(true);
   const [starsCount, setStarsCount] = useState<number>(3900);
   const [number, setNumber] = useState(start);
-
 
   // detect whether user has scrolled the page down by 10px
   const scrollHandler = () => {
@@ -61,8 +60,9 @@ export default function CountingNumbers({
     fetchStarsCount();
   }, [starsCount]); // Include starsCount as a dependency
 
-
-  let increment = Math.floor(Math.abs(start - starsCount) / (duration / interval));
+  let increment = Math.floor(
+    Math.abs(start - starsCount) / (duration / interval)
+  );
   if (increment === 0) {
     increment = 1;
   }
@@ -102,8 +102,6 @@ export default function CountingNumbers({
       }, interval);
     }
   }, [isInView]);
-
-
 
   return (
     <p className={className} ref={ref}>

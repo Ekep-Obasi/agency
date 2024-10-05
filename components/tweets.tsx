@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import XImage from "@/public/images/x-twitter.svg";
 import Link from "next/link";
+
 const Tweets = ({
   avatar,
   name,
@@ -36,12 +37,7 @@ const Tweets = ({
               <div className="">@{id}</div>
             </div>
           </div>
-          <Image
-            src={XImage}
-            width={20}
-            height={20}
-            alt="twitter icon"
-          />
+          <Image src={XImage} width={20} height={20} alt="twitter icon" />
         </div>
         <div className="pt-2">{content}</div>
       </Link>

@@ -3,11 +3,9 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Snackbar from "@mui/material/Snackbar";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-import IconButton from "@mui/material/IconButton";
 import CopyButton from "@/public/images/icons8-copy-96.png";
 import SvgIcon from "@mui/material/SvgIcon";
 import { IconButton as MuiButton } from "@mui/material";
-import { red } from "@mui/material/colors";
 import Link from "next/link";
 
 const Installation = () => {
@@ -94,7 +92,8 @@ const Installation = () => {
             <div className="bg-gray-900 p-4 rounded-lg flex flex-row items-center flex-grow overflow-x-auto">
               <code className=" text-green-300 flex-grow text-xs md:text-sm lg:text-base truncate break-words">
                 {" "}
-                curl --silent -O -L https://keploy.io/install.sh && source install.sh
+                curl --silent -O -L https://keploy.io/install.sh && source
+                install.sh
               </code>
               <Image
                 priority
@@ -135,7 +134,10 @@ const Installation = () => {
             </div>
           </div>
           <p className=" text-gray-700 mb-0 mt-2 text-xs md:text-sm lg:text-base leading-6">
-            <code className="text-gray-700 bg-gray-300 p-0.5 mx-1 rounded">CMD_TO_RUN_APP</code> is the command to start you app. Say,
+            <code className="text-gray-700 bg-gray-300 p-0.5 mx-1 rounded">
+              CMD_TO_RUN_APP
+            </code>{" "}
+            is the command to start you app. Say,
             <code className="text-gray-700 bg-gray-300 p-0.5 mx-1 rounded">
               python main.py
             </code>{" "}
@@ -158,8 +160,8 @@ const Installation = () => {
             3. Test 🧪
           </h1>
           <p className=" text-gray-700 mb-2 mt-1 text-xs md:text-sm lg:text-base">
-            Shut down Database , Redis , Kafka and other services. Keploy don't need
-            those during test.
+            Shut down Database , Redis , Kafka and other services. Keploy don't
+            need those during test.
           </p>
 
           <div className="flex flex-row gap-5">

@@ -385,14 +385,12 @@ export const DataFiles = [
   },
   {
     // card-6
-    CardImage:
-      card_6_thumbnailImage,
+    CardImage: card_6_thumbnailImage,
     CardDescription: "Understanding Continuous Testing",
     Slug: "understanding-continuous-testing",
     Story: [
       {
-        imageUrl:
-          card_6_thumbnailImage,
+        imageUrl: card_6_thumbnailImage,
         Heading: "Understanding Continuous Testing",
         image: true,
       },
@@ -444,14 +442,12 @@ export const DataFiles = [
   },
   {
     // card-7
-    CardImage:
-      card_7_thumbnailImage,
+    CardImage: card_7_thumbnailImage,
     CardDescription: "The Misconception of 100% Coverage",
     Slug: "the-misconception-of-100-coverage",
     Story: [
       {
-        imageUrl:
-          card_7_thumbnailImage,
+        imageUrl: card_7_thumbnailImage,
         Heading: "The Misconception of 100% Coverage",
         image: true,
       },

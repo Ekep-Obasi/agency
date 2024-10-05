@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { websiteContactUrl } from '@/services/constants';
-import '../app/css/style.css';
+import { useState } from "react";
+import { websiteContactUrl } from "@/services/constants";
+import "../app/css/style.css";
 
 const emailValidation = (email: string) => {
   const response = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   if (!response) {
     return {
       success: false,
-      message: 'Please enter a valid email address!',
+      message: "Please enter a valid email address!",
     };
   }
 
   return {
     success: true,
-    message: 'Please hit the subscribe button',
+    message: "Please hit the subscribe button",
   };
 };
 
@@ -25,27 +25,27 @@ export const subscribeMutation = (formData: {
 }) => {
   if (websiteContactUrl) {
     return fetch(websiteContactUrl, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        Origin: 'https://keploy.io',
+        "Content-Type": "application/json",
+        Origin: "https://keploy.io",
       },
       body: JSON.stringify(formData),
     }).then(async (response) => {
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
       return response;
     });
   } else {
-    return Promise.reject('invalid website contact url');
+    return Promise.reject("invalid website contact url");
   }
 };
 
 export default function Newsletter() {
   const [subscribed, setSubscribed] = useState(false);
-  const [subscribeMessage, setSubscribeMessage] = useState('');
-  const [email, setEmail] = useState('');
+  const [subscribeMessage, setSubscribeMessage] = useState("");
+  const [email, setEmail] = useState("");
   const [subscribeButtonStatus, setSubscribeButtonStatus] = useState(true);
 
   const handleEmailInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,16 +59,16 @@ export default function Newsletter() {
     try {
       const response = await subscribeMutation({
         email: email,
-        message: '$100',
+        message: "$100",
       });
       if (response.status == 201) {
-        setSubscribeMessage('Thanks for subscribing!');
+        setSubscribeMessage("Thanks for subscribing!");
         setSubscribed(true);
       } else {
-        console.error('Subscribe request failed.');
+        console.error("Subscribe request failed.");
       }
     } catch (error) {
-      console.error('Error sending subscribe request:', error);
+      console.error("Error sending subscribe request:", error);
     }
   };
 
@@ -169,7 +169,7 @@ export default function Newsletter() {
               {/* CTA content */}
               <div className="text-center lg:text-left lg:max-w-xl">
                 <h3 className="h3 text-primary-300 mb-2">
-                  Keploy test coverage Challenge!{' '}
+                  Keploy test coverage Challenge!{" "}
                 </h3>
                 <h4 className="h4 text-accent-100 mb-2 underline">
                   How it works?
@@ -178,16 +178,16 @@ export default function Newsletter() {
                   - Share Your Application Dependencies with us!
                 </p>
                 <p className="text-neutral-300 text-lg mb-3">
-                  - Choose any backend application with the{' '}
+                  - Choose any backend application with the{" "}
                   <span className="text-primary-300 text-lg mb-6 font-extrabold">
                     LOWEST
-                  </span>{' '}
+                  </span>{" "}
                   Test Coverage!
                 </p>
                 <p className="text-neutral-300 text-lg mb-6">
                   - Our team will determine if Keploy can generate your API
                   tests. <br />
-                  If we can!! you can keep the tests. If we can’t, you get{' '}
+                  If we can!! you can keep the tests. If we can’t, you get{" "}
                   <span className="text-primary-300 text-lg mb-6 font-extrabold">
                     $100.
                   </span>
@@ -209,7 +209,7 @@ export default function Newsletter() {
                         type="button"
                         className={`btn text-secondary-300 bg-primary-300 hover:bg-primary-400 shadow ${
                           subscribeButtonStatus
-                            ? 'not-allowed-button'
+                            ? "not-allowed-button"
                             : undefined
                         }`}
                         onClick={handleSubscribe}

@@ -28,7 +28,7 @@ export default function CustomForm({ isOpen, onClose }: FormProps) {
     dependencies: "",
   });
   const [loading, setLoading] = useState<boolean>(false);
-  const [success,setSuccess] = useState<boolean>(false)
+  const [success, setSuccess] = useState<boolean>(false);
   const [emailError, setEmailError] = useState("");
   const formRef = useRef(null);
 
@@ -46,7 +46,7 @@ export default function CustomForm({ isOpen, onClose }: FormProps) {
   const isValidEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
-  const resetFormData =()=>{
+  const resetFormData = () => {
     setFormData({
       name: "",
       email: "",
@@ -55,8 +55,8 @@ export default function CustomForm({ isOpen, onClose }: FormProps) {
       language: "",
       currentMethod: "",
       dependencies: "",
-    })
-  }
+    });
+  };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!isValidEmail(formData.email)) {
@@ -82,13 +82,15 @@ export default function CustomForm({ isOpen, onClose }: FormProps) {
     })
       .then((res) => {
         setLoading(false);
-        setSuccess(true)
+        setSuccess(true);
       })
       .catch((err) => console.log(err));
   };
 
   const isSubmitDisabled = (): boolean => {
-    return Boolean(loading || Object.values(formData).some((value) => value.trim() === ""));
+    return Boolean(
+      loading || Object.values(formData).some((value) => value.trim() === "")
+    );
   };
 
   return (
@@ -246,7 +248,7 @@ export default function CustomForm({ isOpen, onClose }: FormProps) {
                   <textarea
                     name="dependencies"
                     className="rounded text-black  px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    style={{resize: "none" }}
+                    style={{ resize: "none" }}
                     value={formData.dependencies}
                     onChange={(e) => handleChange(e)}
                     placeholder="List all the dependencies of your application"
